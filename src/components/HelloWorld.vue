@@ -26,7 +26,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      wws: new WebSocket('wss://207.148.122.21:8443/demo'),
+      wws: new WebSocket('wss://207.148.66.161:8443/demo'),
       videoInput: null,
       videoOutput: null,
       webRtcPeer: null,
