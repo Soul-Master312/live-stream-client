@@ -52,7 +52,11 @@ export default {
       let options = {
         localVideo: this.videoInput,
         remoteVideo: this.videoOutput,
-        onicecandidate: this.onIceCandidate
+        onicecandidate: this.onIceCandidate,
+        dataChannels: true,
+        dataChannelConfig: {
+          id: 'wss://207.148.66.161:8888/kurento'
+        }
       }
       let target = this
       this.webRtcPeer = KurentoUtils.WebRtcPeer.WebRtcPeerSendrecv(options, function (error) {
@@ -156,6 +160,7 @@ export default {
     this.videoInput = this.$refs.videoInput
     this.videoOutput = this.$refs.videoOutput
     this.onMessage()
+    console.log(location.host)
   },
   destroyed () {
     this.wws.close()
